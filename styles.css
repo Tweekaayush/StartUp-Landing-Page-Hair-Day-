@@ -1,0 +1,485 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    background-color: white;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    scroll-behavior: smooth;
+}
+
+/*------------------------ Navbar --------------------------*/
+
+.navbar{
+    z-index: 999;
+    height: 3em;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+    letter-spacing: .1em;
+}
+
+.nav-brand{
+    text-decoration: none;
+}
+
+.nav-brand img{
+    height: 1.2em;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.nav-item{
+    padding: .3em .5em;
+    transition: all 0.3s;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: #D0604C;
+    font-size: 1em;
+}
+
+.nav-item:hover{
+    border-bottom: 1px solid #D0604C;
+}
+
+.nav-item:last-child{
+    border: 1px solid #D0604C;
+}
+
+.nav-item:last-child:hover{
+    background-color: #D0604C;
+}
+
+.nav-item:last-child:hover a{
+    color: white;
+}
+
+.nav-toggler{
+    display: none;
+    flex-direction: column;
+    gap: .2em;
+}
+
+.nav-toggler div{
+    background-color:#D0604C;
+    width: 1.5em;
+    height: .25em;
+    transition: all 0.3s;
+}
+
+.toggle .line1{
+    transform: rotate(45deg) translate(0.2em, .4em);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(-45deg) translate(0.2em, -0.4em);
+}
+
+/*------------------------ Home Section --------------------------*/
+
+section{
+    padding: 3em 2em;
+    min-height: 90vh;
+}
+
+#home{
+    padding-top: 3em;
+    position: relative;
+    display: flex;
+    align-items: center; 
+    color: #EDE9D0;
+    background-color: #FFF5F1;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+#home div{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#home h1{
+    color: #D0604C;
+    font-size: 5em;
+    font-weight: 300;
+}
+
+#home p{
+    color: #BB8377;
+    letter-spacing: 1px;
+    line-height: 1.3em;
+}
+
+#home .home-buttons{
+    flex-direction: row;
+}
+
+#home .home-buttons a{
+    text-decoration: none;
+    padding: 1em;
+}
+#home .home-buttons a:first-child{
+    background-color: #D0604C;
+    color: white;
+    transition: all 0.3s;
+}
+
+#home .home-buttons a:first-child:hover{
+    background-color: white;
+    color: #D0604C;
+    border: 1px solid #D0604C;
+}
+
+
+#home .home-buttons a:last-child{
+    text-decoration: none;
+    color: #BB8377;
+}
+
+.home-right-container img{
+    object-fit: fit;
+}
+
+/*------------------------ About Section --------------------------*/
+
+#about{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #D0604C;
+}
+
+#about div{
+    flex: 1;
+}
+
+.about-left-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.about-left-container h1{
+    font-size: 4em;
+    color: white;
+}
+
+
+.about-left-container p{
+    font-size:1.2em ;
+    line-height: 1.8em;
+    color: white;
+}
+
+.about-left-container p:last-child{
+    color: rgba(255, 255, 255, 0.771);
+}
+
+.about-right-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-right-container div{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -4em;
+    width: 30em;
+    padding: 2em 4em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    gap: 1em;
+    min-height: 75vh;
+}
+
+.about-right-container div h1{
+    text-align: center;
+    font-size: 2em;
+    color: #D0604C;
+}
+
+
+.about-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.about-form input, textarea{
+    padding: 1em;
+    border: none;
+    background-color: rgb(239, 239, 239);
+}
+
+.about-form input[type="submit"]{
+    background-color: #D0604C;
+    color: white;
+    width: 10em;
+    transition: all 0.3s;
+}
+
+.about-form input[type="submit"]:hover{
+    background-color: white;
+    color: #D0604C;
+    border: 1px solid #D0604C;
+}
+
+/*------------------------ Footer --------------------------*/
+
+#services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
+}
+
+.services-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.services-heading h1{
+    font-size: 4em;
+    color: #D0604C;
+}
+
+.services-heading p{
+    font-size: 1.2em;
+    color: #BB8377;
+}
+
+.services-content{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+}
+
+.services-card{
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.services-card:hover{
+    transform: scale(1.1);
+}
+
+.services-card > h2{
+    color: #D0604C;
+}
+
+.services-card > p{
+    color: #BB8377;
+}
+
+/*------------------------ Footer --------------------------*/
+
+
+footer{
+    width: 100%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 17em;
+    background-color: #FFF5F1;
+    color: #D0604C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 2em 2em 0.5em 2em;
+}
+
+footer > a{
+    text-decoration: none;
+    background-color: #D0604C;
+    color: white;
+    padding: .5em;
+    top: -20px;
+    position: absolute;
+    font-size: 1em;
+    transition: all 0.5s;
+
+}
+
+.footer-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-links{
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.footer-logo{
+    flex: 1;
+}
+
+.footer-links div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    text-align: start;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: #D0604C;
+    font-size: 1.1em;
+}
+
+.footer-logo img{
+    height: 200px;
+}
+
+/*------------------------ Media Queries for Responsive Behaviour --------------------------*/
+
+@media screen and (max-width:1074px) {
+    .nav-toggler{
+        display: flex;
+    }
+
+    .nav-links{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 3em;
+        right: 0;
+        height: 100%;
+        width: 20em;
+        gap: 2rem;
+        background-color: #D0604C;
+        transform: translateX(100%);
+        transition: ease-in-out 0.5s;
+    }
+
+    .nav-item a{
+         color: white;
+    }
+
+    .nav-item:last-child{
+        border-color:  white;
+    }
+
+    #home{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #home .home-right-container{
+        display: none;
+    }
+
+    #about{
+        flex-direction: column;
+        gap: 2em;
+    }
+    .about-right-container div{
+        position: relative;
+        top: 0;
+    }
+
+    .services-content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-links a{
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-content{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-logo{display: none;}
+}
+
+@media screen and (max-width: 576px) {
+
+    #home h1{
+        font-size: 3em;
+    }
+
+    #home p{
+        font-size: 0.9em;
+    }
+    
+    .about-left-container h1{
+        font-size: 3em;
+    }
+
+    #about p{
+        font-size: 0.9em;
+    }
+
+    .services-heading h1{
+        font-size: 3em;
+    }
+
+    .services-heading p{
+        font-size: 0.9em;
+    }
+
+    .nav-links{
+        width: 100%;
+    }
+    .services-content{
+        grid-template-columns: 1fr;
+    }
+}
+
+.nav-active{
+    transform: translateX(0);
+}
+
+.resize-animation-stopper * {
+    transition: none !important;
+  }
+
+ .scrolled{
+    position: fixed;
+    background-color: #FFF5F1;
+ } 

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <img id="nav-brand-img" src="./assets/images/Artboard 22.png" alt="">
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about">Book an Appointment</a>
+            </li>
+        </ul>
+        <div class="nav-toggler">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="home-left-container">
+            <p>Based in Madison, Wisconsin,</p>
+            <h1 class="home-heading">Hair Day</h1>
+            <p>is a boutique hair salon that specializes in cut, color and styling. Hair Day also offers makeup and nail services, prides itself on its warm and relaxing atmosphere and is best known for edgy hair colors and on-trend cuts.</p>
+            <div class="home-buttons">
+                <a href="#about">Book an appointment</a>
+                <a href="#services">View our Services...</a>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="about-left-container">
+            <h1>About Us</h1>
+            <hr>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, suscipit.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, illum molestias suscipit reiciendis doloremque error repudiandae, maiores magni saepe cumque quo provident dolor sequi quis esse exercitationem. Non dolor, ipsam dicta suscipit mollitia nam cumque cupiditate corporis labore nostrum repudiandae asperiores modi sapiente soluta accusamus ea, id laudantium quibusdam aliquid?</p>
+        </div>
+        <div class="about-right-container">
+            <div>
+                <h1>Book An Appointment</h1>
+                <form action="" method="post" class="about-form">
+                    <input type="text" name="name" placeholder="Your Name..." required>
+                    <input type="email" name="email" placeholder="Your Email..." required>  
+                    <input type="number" name="phone" placeholder="Your Phone No. ..." required>
+                    <input type="date" name="appointment-date" required>
+                    <textarea name="message" cols="30" rows="10"></textarea>
+                    <input type="submit" value="Book">
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="services-heading">
+            <h1>Our Services</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quam quis optio minus magni necessitatibus autem impedit illum nostrum reiciendis.</p>
+        </div>
+        <div class="services-content">
+            <div class="services-card">
+                <h2>Hair Cutting</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt?</p>
+            </div>
+            <div class="services-card">
+                <h2>Hair Coloring</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt?</p>
+            </div>
+            <div class="services-card">
+                <h2>Hair Styling</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt?</p>
+            </div>
+            <div class="services-card">
+                <h2>Makeup</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt?</p>
+            </div>
+            <div class="services-card">
+                <h2>Nail Services</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt?</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <a href="#home">Back To Top</a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-page-links">
+                    <h2>Quick Links</h2>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">Book an Appointment</a>
+                </div>
+                <div class="footer-services-links">
+                    <h2>Our Services</h2>
+                    <a href="#services">Cutting</a>
+                    <a href="#services">Styling</a>
+                    <a href="#services">Makeup</a>
+                    <a href="#services">Coloring</a>
+                    <a href="#services">Nail Services</a>
+                </div>
+                <div class="footer-contact-us">
+                    <h2>Contact Us</h2>
+                    <a href="">123 5th Ave, Madison, Wisconsin</a>
+                    <a href="">+1 123 456 7890</a>
+                    <a href="">HairDay@example.com</a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <img src="./assets/images/Artboard 19.png" alt="">
+            </div>
+        </div>
+        <div className="copyright">Hair day &copy; <span id="year"></span></div>
+    </footer>
+    <!-- Javascript -->
+    <script>
+        let navToggler = document.querySelector('.nav-toggler')
+    let navLinks = document.querySelector('.nav-links')
+    let year = document.getElementById('year')
+    let toggler = true
+    let resizeTimer
+    let date = new Date().getFullYear()
+    let navItem = document.querySelectorAll('li a')
+    let nav = document.querySelector('nav')
+
+    year.innerHTML = date
+
+    window.addEventListener("scroll", ()=>{
+        if(window.scrollY > 48)
+            nav.classList.add('scrolled')
+        else
+            nav.classList.remove('scrolled')
+    })
+
+    window.addEventListener("resize", ()=>{
+        if(document.body.clientWidth>1074)
+            toggler = false
+            document.body.classList.add("resize-animation-stopper");
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+            document.body.classList.remove("resize-animation-stopper");
+            }, 400);
+    });
+
+    navToggler.addEventListener('click', ()=>{
+        if(toggler){
+            toggler = false
+            navToggler.classList.add('toggle')
+            navLinks.classList.add('nav-active')
+        }else{
+            toggler = true
+            navLinks.classList.remove('nav-active')
+            navToggler.classList.remove('toggle')
+        }
+    })
+    
+    
+    navItem.forEach((item)=>{
+        item.addEventListener('click', ()=>{
+            navToggler.classList.remove('toggle')
+            navLinks.classList.remove('nav-active')
+        })
+    })
+    </script>
+</body>
+</html>
